@@ -1,4 +1,3 @@
-setwd("/Users/donalp/Dropbox/3-Work/Training/Software stuff/Coding/R/DataScience/Coursera/Getting-cleaning-data/Tidy-Galaxy")
 library(plyr)
 library(dplyr)
 library(reshape2)
