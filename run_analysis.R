@@ -1,4 +1,4 @@
-setwd("/Users/donalp/Dropbox/3-Work/Training/Software stuff/Coding/R/DataScience/Coursera/Getting-cleaning-data/Galaxy-Assignment")
+setwd("/Users/donalp/Dropbox/3-Work/Training/Software stuff/Coding/R/DataScience/Coursera/Getting-cleaning-data/Tidy-Galaxy")
 library(plyr)
 library(dplyr)
 library(reshape2)
@@ -77,3 +77,4 @@ library(reshape2)
 # Output the data
   write.csv(fullData, file="output/fullData.csv")
   write.csv(tidyData, file="output/tidyData.csv")
+  write.table(tidyData, file="output/tidyData.txt", row.name=FALSE)
