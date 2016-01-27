@@ -29,6 +29,7 @@ There aren't many git commits in this repository because I initially made the mi
 This script performs the following steps:
 
 *Part 1*
+
 1. Loads in the original data set
 2. Reads in the test and training data sets, combines each with their respective subject IDs and activity descriptions.
 3. Combines the test and training data sets.
@@ -36,5 +37,6 @@ This script performs the following steps:
 5. Labels variables with descriptive variable names.
 	
 *Part 2*
+
 1. For each subject, by activity, provides the average of each measurement which was selected in part 1.
 
