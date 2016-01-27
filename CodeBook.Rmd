@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 The tidyData.csv file provides a summary for each subject in this study. It groups the data by subject and activity, and shows the average of all measurements on the mean or standard deviation.
 
 ## Variables
@@ -8,7 +8,7 @@ The tidyData.csv file provides a summary for each subject in this study. It grou
 	- _time / fourier:_ measurements on the time domain or measurements using a Fast Fourier transform.
 	- _Body / Gravity:_ the acceleration signal was either body or gravity.
 	- _Accelerometer / Gyroscope:_ Measurement signals were from an accelerometer or gyroscope.
-	- _Jerk: A jerk signal is included.
+	- _Jerk:_ A jerk signal is included.
 	- _Mean / Stdev:_ measurements on the mean or standard deviation.
 	- _X / Y / Z:_ the axis on which the measurement was recorded.
 	- _Mag:_ the magnitude of the 3-dimensional signal (calculated using the Euclidean norm)
