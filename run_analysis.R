@@ -1,3 +1,4 @@
+setwd("/Users/donalp/Dropbox/3-Work/Training/Software stuff/Coding/R/DataScience/Coursera/Getting-cleaning-data/Tidy-Galaxy")
 library(plyr)
 library(dplyr)
 library(reshape2)
@@ -26,28 +27,32 @@ library(reshape2)
   ## Get the training data
     trainingSet<-read.table("data/UCI HAR Dataset/train/X_train.txt")
     trainingSubjects<-read.table("data/UCI HAR Dataset/train/subject_train.txt")
+    names(trainingSubjects)<-"subjects"
     trainingLabels<-read.table("data/UCI HAR Dataset/train/y_train.txt")
-    trainingLabels<-merge(trainingLabels, activityLabels, by.x="V1", by.y="V1") # match activity numbers to names
+    names(trainingLabels)<-"traininglabel"
     
     # Combine all training data
-    fullTraining<-cbind(trainingSubjects, trainingLabels, trainingSet)
-    fullTraining<-fullTraining[,-2] # remove redundant column
+    fullTraining<-cbind( trainingSubjects, trainingLabels, trainingSet )
+    fullTraining<-merge(activityLabels, fullTraining, by.x="V1", by.y="traininglabel", all = TRUE) # match activity numbers to names
+    fullTraining<-fullTraining[,-1] # remove redundant column
   
   ## Get the test data
     testSet<-read.table("data/UCI HAR Dataset/test/X_test.txt")
     testSubjects<-read.table("data/UCI HAR Dataset/test/subject_test.txt")
+    names(testSubjects)<-"subjects"
     testLabels<-read.table("data/UCI HAR Dataset/test/y_test.txt")
-    testLabels<-merge(testLabels, activityLabels, by.x="V1", by.y="V1") # match activity numbers to names
+    names(testLabels)<-"traininglabel"
       
     # Combine all test data
     fullTest<-cbind(testSubjects, testLabels, testSet)
-    fullTest<-fullTest[,-2] # remove redundant column
+    fullTest<-merge(activityLabels, fullTest, by.x="V1", by.y="traininglabel", all = TRUE) # match activity numbers to names
+    fullTest<-fullTest[,-1] # remove redundant column
 
 ## Merge the training and the test sets to create one data set.
   fullData<-rbind(fullTraining, fullTest)
 
 # Extracts only the measurements on the mean and standard deviation for each measurement.
-  fullData<-select(fullData, 1, 2, targetFeatures$V1+2)
+  fullData<-select(fullData, 2, 1, targetFeatures$V1+2)
   names(fullData)<-c("subject","activity", as.character(targetFeatures$V2))
 
 # Clean up the workspace
