@@ -1,0 +1,21 @@
+# Introduction
+The tidyData.csv file provides a summary for each subject in this study. It groups the data by subject and activity, and shows the average of all measurements on the mean or standard deviation.
+
+## Variables
+- **Subject:** A unique numerical identifier (1-30) for each of the 30 subjects who participated in this experiment.
+- **Activity:** One of six activity descriptions: WALKING, WALKING_UPSTAIRS,WALKING_DOWNSTAIRS, SITTING, STANDING or LAYING.
+- **Variable:** The feature measurement type. The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. Variable names are comprised of several words which describe the measurement type:
+	- _time / fourier:_ measurements on the time domain or measurements using a Fast Fourier transform.
+	- _Body / Gravity:_ the acceleration signal was either body or gravity.
+	- _Accelerometer / Gyroscope:_ Measurement signals were from an accelerometer or gyroscope.
+	- _Jerk: A jerk signal is included.
+	- _Mean / Stdev:_ measurements on the mean or standard deviation.
+	- _X / Y / Z:_ the axis on which the measurement was recorded.
+	- _Mag:_ the magnitude of the 3-dimensional signal (calculated using the Euclidean norm)
+- **Value:** the numerical value of each measurement.
+
+Camel case was used deliberately in variable names, to improve readability.
+
+## Original data
+Original data and variable descriptions can be found at 
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones

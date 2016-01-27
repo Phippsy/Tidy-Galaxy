@@ -1,0 +1,40 @@
+## Repository Contents
+
+- README.md: this file
+- run_analysis.R: an R script to extract target data and output a tidy data set (see below for more information)
+- "output/fullData.csv" and "output/tidyData.csv": the two files produced by run_analysis.R. 
+	- fullData.csv has 10,299 observations of 68 variables.
+	- tidyData.csv has 2,640 observations of 4 variables.
+- CodeBook.md: the codebook for the tidy and full data sets produced.
+
+## Introduction
+The files in this repository were produced to extract a subset of data from an experiment to measure sensor signals from a Galaxy Smartphone. Further details on this experiment can be found at:
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+Source data can be downloaded from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+This script requires the plyr, dplyr and reshape libraries. To install these in R, type the following command into your console:
+
+```r
+install.packages( c("plyr","dplyr","reshape2") )
+```
+
+There aren't many git commits in this repository because I initially made the mistake of including the source data in my push to github, so had to start a new folder without it.
+
+## Output files
+- The fullData.csv file provides measurements on only the mean and standard deviation for all subjects and all activities. 
+- The tidyData.csv file shows the aggregated mean of each measurement in a tal l and skinny format.
+
+## run_analysis.R
+This script performs the following steps:
+
+- *Part 1*
+	1. Loads in the original data set
+	2. Reads in the test and training data sets, combines each with their respective subject IDs and activity descriptions.
+	3. Combines the test and training data sets.
+	4. Extracts only the measurements on the mean or standard deviation.
+	5. Labels variables with descriptive variable names.
+	
+- *Part 2*
+	1. For each subject, by activity, provides the average of each measurement which was selected in part 1.
+
